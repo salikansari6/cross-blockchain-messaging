@@ -1,0 +1,151 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "_origin",
+        "type": "uint32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_sender",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_messageBody",
+        "type": "bytes"
+      }
+    ],
+    "name": "handle",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_mailbox",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "messageId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "MessageSent",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "_origin",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "nonce",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "_messageBody",
+        "type": "string"
+      }
+    ],
+    "name": "ReceivedMessage",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "destinationDomain",
+        "type": "uint32"
+      },
+      {
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "message",
+        "type": "string"
+      }
+    ],
+    "name": "sendMessage",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "messageId",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "destinationDomain",
+        "type": "uint32"
+      },
+      {
+        "internalType": "address",
+        "name": "recipientAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "messageBody",
+        "type": "string"
+      }
+    ],
+    "name": "getGasForMessage",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "fee",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "mailbox",
+    "outputs": [
+      {
+        "internalType": "contract IMailbox",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

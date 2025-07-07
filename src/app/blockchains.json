@@ -1,0 +1,16 @@
+[
+  {
+    "blockchain_name": "Sepolia",
+    "contract_address": "0x85dcfb12d3bb8bc00942cb336d62a0800514240b",
+    "chain_id": 11155111,
+    "rpc_url": "https://sepolia.infura.io/v3",
+    "explorer_url": "https://sepolia.etherscan.io"
+  },
+  {
+    "blockchain_name": "Polygon Amoy",
+    "contract_address": "0x1b5d24284db1f996fc607472610ec4da8f9731a5",
+    "chain_id": 80002,
+    "rpc_url": "https://polygon-amoy.infura.io/v3",
+    "explorer_url": "https://amoy.polygonscan.com"
+  }
+]
