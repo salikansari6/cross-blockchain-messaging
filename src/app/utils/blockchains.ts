@@ -11,7 +11,7 @@ export async function getBlockchains(): Promise<Blockchain[]> {
   try {
     // Try to read from local file first (for server-side rendering)
     const file = await fs.readFile(
-      process.cwd() + "/src/app/blockchains.json",
+      process.cwd() + "/src/data/blockchains.json",
       "utf8"
     );
     const data = JSON.parse(file);
