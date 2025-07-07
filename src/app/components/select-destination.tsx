@@ -26,7 +26,7 @@ const SelectDestination = ({ blockchains }: { blockchains: Blockchain[] }) => {
         placeholder="Select your blockchain"
       />
       <Link
-        className="ml-auto inline-block"
+        className="lg:ml-auto inline-block"
         href={`/message?${new URLSearchParams({
           ...Object.fromEntries(searchParams.entries()),
           destination_blockchain_contract_address:

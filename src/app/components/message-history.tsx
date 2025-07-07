@@ -73,7 +73,6 @@ const MessageHistory = ({ blockchains }: { blockchains: Blockchain[] }) => {
         };
       }[]
     ) => {
-      console.log("groupAllContractLogsByMessageId being called");
       const messageIdToLogs = new Map<
         string,
         {
@@ -155,7 +154,7 @@ const MessageHistory = ({ blockchains }: { blockchains: Blockchain[] }) => {
   }, [getMessagesHistory, groupAllContractLogsByMessageId]);
 
   return (
-    <div className="max-w-7xl w-full py-8 flex flex-col items-center justify-center">
+    <div className="max-w-7xl w-full py-8 px-6 lg:px-0 flex flex-col items-center justify-center">
       {loading || isError ? (
         <div className="flex flex-col items-center justify-center min-h-48 gap-4">
           {loading && <Loader className="size-18 animate-spin" />}
@@ -173,7 +172,7 @@ const MessageHistory = ({ blockchains }: { blockchains: Blockchain[] }) => {
         </div>
       ) : (
         <>
-          <h1 className="text-2xl font-bold self-start my-4">
+          <h1 className="text-2xl font-bold lg:self-start my-4">
             Message History
           </h1>
           <Table>

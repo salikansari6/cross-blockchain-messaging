@@ -76,11 +76,11 @@ const MessageStatus = ({
   }, [poll]);
 
   return (
-    <div className="max-w-4xl w-full py-8 flex flex-col items-center lg:items-start">
+    <div className="max-w-4xl w-full py-8 px-6 lg:px-0 flex flex-col items-center lg:items-start">
       <h1 className="text-3xl font-medium">Message Status</h1>
 
       <div className="my-8 w-full">
-        <p className="text-md font-medium">
+        <p className="text-md font-medium text-center lg:text-left">
           {message
             ? "Message Received"
             : "Waiting for confirmation on destination chain..."}

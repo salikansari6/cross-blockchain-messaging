@@ -146,16 +146,16 @@ const Message = ({
   };
 
   return (
-    <div className="max-w-4xl w-full py-8 flex flex-col items-center lg:items-start">
+    <div className="max-w-4xl w-full py-8 px-6 lg:px-0 flex flex-col items-center lg:items-start">
       <h1 className="text-3xl font-medium">Message</h1>
       <textarea
-        className="p-2 border w-1/2 h-40 border-gray-300 rounded-md my-6"
+        className="p-2 border w-full lg:w-1/2 h-40 border-gray-300 rounded-md my-6"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
       />
 
       <Button
-        className="bg-button-bg text-secondary text-sm font-semibold px-6 py-2 ml-auto cursor-pointer"
+        className="bg-button-bg text-secondary text-sm font-semibold px-6 py-2 lg:ml-auto cursor-pointer"
         onClick={estimateGas}
         disabled={isLoading}
       >
@@ -176,7 +176,7 @@ const Message = ({
             <Button
               onClick={send}
               disabled={isLoading}
-              className="bg-button-bg  text-secondary text-sm font-semibold px-6 py-2 ml-auto cursor-pointer"
+              className="bg-button-bg  text-secondary text-sm font-semibold px-6 py-2 lg:ml-auto cursor-pointer"
             >
               {isLoading && <Loader2Icon className="animate-spin" />}
               {isLoading ? "Sending..." : "Confirm"}
