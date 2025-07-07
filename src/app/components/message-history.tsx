@@ -104,7 +104,6 @@ const MessageHistory = ({ blockchains }: { blockchains: Blockchain[] }) => {
                 sourceBlockChain?.contract_address
             )
             ?.contractLogs.sentLogs.find((sl) => sl.args[0] === messageId);
-
           if (sourceBlockChain && destinationBlockChain) {
             messageIdToLogs.set(messageId, {
               source_blockchain_name: sourceBlockChain.blockchain_name,
