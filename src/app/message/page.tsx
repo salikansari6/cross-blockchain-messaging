@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Message from "../components/message";
 
 const MessagePage = async ({
@@ -14,16 +14,20 @@ const MessagePage = async ({
   } = await searchParams;
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <Message
-        sourceBlockchainContractAddress={source_blockchain_contract_address}
-        destinationBlockchainContractAddress={
-          destination_blockchain_contract_address
-        }
-        destinationBlockchainChainId={parseInt(destination_blockchain_chain_id)}
-        sourceBlockchainChainId={parseInt(source_blockchain_chain_id)}
-      />
-    </div>
+    <Suspense>
+      <div className="flex flex-col justify-center items-center">
+        <Message
+          sourceBlockchainContractAddress={source_blockchain_contract_address}
+          destinationBlockchainContractAddress={
+            destination_blockchain_contract_address
+          }
+          destinationBlockchainChainId={parseInt(
+            destination_blockchain_chain_id
+          )}
+          sourceBlockchainChainId={parseInt(source_blockchain_chain_id)}
+        />
+      </div>
+    </Suspense>
   );
 };
 

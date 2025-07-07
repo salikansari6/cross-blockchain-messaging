@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import MessageStatus from "../components/message-status";
 import { getBlockchainByChainId } from "../utils/blockchains";
 
@@ -20,12 +20,14 @@ const MessageStatusPage = async ({
   }
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <MessageStatus
-        sourceBlockChain={sourceBlockChain}
-        destinationBlockChain={destinationBlockChain}
-      />
-    </div>
+    <Suspense>
+      <div className="flex flex-col justify-center items-center">
+        <MessageStatus
+          sourceBlockChain={sourceBlockChain}
+          destinationBlockChain={destinationBlockChain}
+        />
+      </div>
+    </Suspense>
   );
 };
 

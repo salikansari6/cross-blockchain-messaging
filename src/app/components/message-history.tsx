@@ -12,8 +12,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { ExternalLinkIcon, Loader, Loader2 } from "lucide-react";
-import { toast } from "sonner";
+import { ExternalLinkIcon, Loader } from "lucide-react";
 
 const MessageHistory = ({ blockchains }: { blockchains: Blockchain[] }) => {
   const [loading, setLoading] = useState(false);
