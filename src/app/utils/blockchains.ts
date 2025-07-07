@@ -1,4 +1,5 @@
 import fs from "fs/promises";
+import path from "path";
 import { Blockchain } from "../interfaces";
 
 /**
@@ -9,9 +10,8 @@ export async function getBlockchains(): Promise<Blockchain[]> {
   "use server";
 
   try {
-    // Try to read from local file first (for server-side rendering)
     const file = await fs.readFile(
-      process.cwd() + "/src/data/blockchains.json",
+      path.join(process.cwd(), "src", "data", "blockchains.json"),
       "utf8"
     );
     const data = JSON.parse(file);
@@ -50,7 +50,6 @@ export async function getBlockchainsFromAPI(): Promise<Blockchain[]> {
 export async function getBlockchainByChainId(
   chainId: number
 ): Promise<Blockchain | undefined> {
-  "use server";
   try {
     const blockchains = await getBlockchains();
     return blockchains.find((blockchain) => blockchain.chain_id === chainId);
